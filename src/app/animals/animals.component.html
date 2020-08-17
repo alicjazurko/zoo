@@ -1,0 +1,9 @@
+<h2>Zwierzęta w ZOO</h2>
+<ul class="animals">
+  <li *ngFor="let animal of animals">
+    
+    <a routerLink="/details/{{animal.id}}"><span class="number">{{animal.id}}</span> {{animal.name}} <span class='box'> {{animal.box | uppercase}}</span></a>
+    <button class="delete" title="delete animal" (click)="delete(animal)">Usuń</button>
+  </li>
+</ul>
+

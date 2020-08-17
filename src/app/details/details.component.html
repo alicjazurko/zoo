@@ -1,0 +1,21 @@
+<div *ngIf="animal" class = "details">
+
+    <h2>{{animal.name | uppercase}} </h2>
+    <div><span>id: </span>{{animal.id}}</div>
+    <div>
+      <span>gatunek: </span>{{animal.name}}
+    </div>
+    <div>
+        <span>Gromada: </span> {{animal.box}}
+    </div>
+    <div>
+       <input [(ngModel)] = "text">
+       <span>
+           {{text}}
+       </span> 
+    </div>
+    
+        
+
+  
+  </div>

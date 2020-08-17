@@ -1,0 +1,82 @@
+
+
+.animals {
+    --kolor-id: rgb(245, 139, 136);
+    --kolor-name: rgb(243, 210, 210);
+    --kolor-name-hover: rgb(191, 226, 145);
+    list-style-type: none;
+    width: 15em;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin-left: 100px;
+}
+  .animals li {
+    cursor: pointer;
+    position: relative;
+    
+
+  }
+  .animals a {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    left: 35px;
+    background-color: var(--kolor-name);
+    margin: 5px;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+  }
+  .animals a:hover {
+    color: #607D8B;
+    background-color: var(--kolor-name-hover);
+  }
+
+  .animals .number {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    text-align: center;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: var(--kolor-id);
+    line-height: 1em;
+    position: relative;
+    left: -32px;
+    /* top: -4px; */
+    height: 20px;
+    width: 1.2em;
+    margin-right: .8em;
+  }
+
+  .animals .box {
+    display: inline-block;
+    font-size: small;
+    padding: 0.8em 2.7em 0 0.7em;
+    line-height: 1em;
+    position: absolute;
+    right: -30px;
+    background-color: var(--kolor-id);
+    color: white;
+    height: 20px;
+    width: 1.2em;
+   
+  }
+
+  button.delete {
+    position: absolute;
+    top: 5px;
+    right: -130px;
+    display: inline-block;
+    background-color: var(--kolor-name);
+    border: 1px solid var(--kolor-id);
+    height: 30px;
+    width: 50px;
+      
+  }
+
+  button.delete:hover {
+      background-color: var(--kolor-name-hover);
+  }
