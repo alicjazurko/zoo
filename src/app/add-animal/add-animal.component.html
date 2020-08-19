@@ -1,0 +1,48 @@
+
+<div class="row">
+    <div class="col-xs-12 col-lg-12">
+        <form [formGroup]="animalForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+            </div>
+                <div class="col-sm-12 col-md-4 form-group">
+                    <label for="animal-id">Id:</label>
+                    <input id="animal-id" type="number" class="form-control" formControlName="animalId">
+                </div>
+                <div *ngIf="!animalForm.get('animalBox').valid && animalForm.get('animalId').touched" style="color:red">
+                    Id musi być liczbą dodatnią!
+                </div>
+
+                <div class="col-sm-12 col-md-4 form-group">
+                    <label for="animal-box">Gromada:</label>
+                    <input id="animal-box" type="text" class="form-control" formControlName="animalBox">
+                </div>
+                <div *ngIf="!animalForm.get('animalBox').valid && animalForm.get('animalBox').touched" style="color:red">
+                    Gromada jest wymagana, wpisz nazwę!
+                </div>
+
+                <div class="col-sm-12 col-md-4 form-group">
+                    <label for="animal-Name">Zwierzątko:</label>
+                    <input id="animal-Name" type="text" class="form-control" formControlName="animalName">
+                </div>
+                <div *ngIf="!animalForm.get('animalName').valid && animalForm.get('animalName').touched" style="color:red">
+                    Nazwa musi zawierać więcej niż 4 litery.
+                
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 form-group">
+                        </div>
+                        <div class="col-sm-12 col-md-4 form-group">
+                            <button class="btn btn-success" type="submit" [disabled]="!animalForm.valid">Dodaj</button>
+                            <button class="btn btn-primary" type="button" (click)="onClear()">Wyczyść</button>
+                        </div>
+                        <div class="col-sm-12 col-md-4 form-group">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

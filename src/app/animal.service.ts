@@ -32,6 +32,12 @@ export class AnimalService {
     );
   }
 
+  addAnimal(animal: Animal): Observable<Animal> {
+    return this.http.post<Animal>(this.animalsUrl, animal, this.httpOptions).pipe(
+      catchError(this.handleError<Animal>('addAnimal'))
+    );
+  }
+
   deleteAnimal(animal: Animal | number): Observable<Animal> {
     const id = typeof animal === 'number' ? animal : animal.id;
     const url = `${this.animalsUrl}/${id}`;
@@ -46,4 +52,6 @@ export class AnimalService {
       return of(result as T);
     };
   }
+
+  
 }
