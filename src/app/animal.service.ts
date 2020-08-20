@@ -15,7 +15,8 @@ export class AnimalService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    
 
   ) { }
 
@@ -29,6 +30,12 @@ export class AnimalService {
     const url = `${this.animalsUrl}/${id}`;
     return this.http.get<Animal>(url).pipe(
       catchError(this.handleError<Animal>(`getAnimal id=${id}`))
+    );
+  }
+
+  updateAnimal(animal: Animal): Observable<any> {
+    return this.http.put(this.animalsUrl, animal, this.httpOptions).pipe(
+      catchError(this.handleError<any>('updateAnimal'))
     );
   }
 

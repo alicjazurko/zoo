@@ -9,14 +9,14 @@ import { AnimalsComponent } from './animals/animals.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { DetailsComponent } from './details/details.component';
-import { FormComponent } from './form/form.component';
+// import { FormComponent } from './form/form.component';
 import { AddAnimalComponent } from './add-animal/add-animal.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent,
+    // FormComponent,
     AnimalsComponent,
     DetailsComponent,
     AddAnimalComponent,

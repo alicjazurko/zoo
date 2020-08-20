@@ -1,3 +1,6 @@
+h1 {
+    margin-left: 150px;
+}
 nav {
     background-color: rgb(245, 139, 136);
     width: 250px;
@@ -5,6 +8,7 @@ nav {
     text-align: center;
     line-height: 40px;
     border: 2px solid black;
+    margin: 50px;
 }
 
 nav:hover {

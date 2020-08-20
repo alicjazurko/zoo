@@ -46,8 +46,8 @@
     position: relative;
     left: -32px;
     /* top: -4px; */
-    height: 20px;
-    width: 1.2em;
+    height: 28px;
+    width: 3em;
     margin-right: .8em;
   }
 
@@ -60,10 +60,11 @@
     right: -30px;
     background-color: var(--kolor-id);
     color: white;
-    height: 20px;
+    height: 28px;
     width: 1.2em;
    
   }
+
 
   button.delete {
     position: absolute;
@@ -77,6 +78,4 @@
       
   }
 
-  button.delete:hover {
-      background-color: var(--kolor-name-hover);
-  }
+  
