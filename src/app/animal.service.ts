@@ -14,12 +14,14 @@ export class AnimalService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
+  animals: Animal[];
+
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
 
   ) { }
 
-  getAnimals(): Observable<Animal[]> { 
+  getAnimals(): Observable<Animal[]> {
     return this.http.get<Animal[]>(this.animalsUrl).pipe(
       catchError(this.handleError<Animal[]>('getAnimals', []))
     );
@@ -29,6 +31,12 @@ export class AnimalService {
     const url = `${this.animalsUrl}/${id}`;
     return this.http.get<Animal>(url).pipe(
       catchError(this.handleError<Animal>(`getAnimal id=${id}`))
+    );
+  }
+
+  updateAnimal(animal: Animal): Observable<any> {
+    return this.http.put(this.animalsUrl, animal, this.httpOptions).pipe(
+      catchError(this.handleError<any>('updateAnimal'))
     );
   }
 
@@ -53,5 +61,5 @@ export class AnimalService {
     };
   }
 
-  
+
 }

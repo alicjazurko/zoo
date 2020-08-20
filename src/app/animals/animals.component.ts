@@ -11,35 +11,28 @@ import { AddAnimalComponent } from '../add-animal/add-animal.component';
 })
 export class AnimalsComponent implements OnInit {
 
-  selectedAnimal: Animal;
+  // selectedAnimal: Animal;
   animals: Animal[];
 
-  constructor(private animalService: AnimalService) { }
+  constructor(private animalService: AnimalService) {
+    this.animals = [];
+   }
 
+  // tslint:disable-next-line: typedef
   ngOnInit() {
-    this.getAnimals();
+    this.animals = this.animalService.animals;
   }
 
-  getAnimals(): void {
-    this.animalService.getAnimals().subscribe(animals => this.animals = animals);
-  }
+  // getAnimals(): void {
+  //   this.animalService.getAnimals().subscribe(animals => this.animalService.animals = animals);
+  // }
 
-  add(id: number, name: string, box: string): void {
-    
-    this.animalService.addAnimal({ id, name, box } as Animal)
-      .subscribe(animal => {
-        this.animals.push(animal);
-      });
-  }
+
   delete(animal: Animal): void {
-    this.animals = this.animals.filter(a => a !== animal);
+    this.animalService.animals = this.animalService.animals.filter(a => a !== animal);
     this.animalService.deleteAnimal(animal).subscribe();
   }
 
-  // addAnimalToList(animal: Animal): void {
-  //   this.animals = this.animals.push(animal);
-
-  // }
 }
 
 
