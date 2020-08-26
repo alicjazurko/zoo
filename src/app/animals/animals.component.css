@@ -16,7 +16,7 @@
   .animals li {
     cursor: pointer;
     position: relative;
-    
+
 
   }
   .animals a {
@@ -46,8 +46,8 @@
     position: relative;
     left: -32px;
     /* top: -4px; */
-    height: 20px;
-    width: 1.2em;
+    height: 28px;
+    width: 3em;
     margin-right: .8em;
   }
 
@@ -60,10 +60,11 @@
     right: -30px;
     background-color: var(--kolor-id);
     color: white;
-    height: 20px;
+    height: 28px;
     width: 1.2em;
-   
+
   }
+
 
   button.delete {
     position: absolute;
@@ -74,9 +75,18 @@
     border: 1px solid var(--kolor-id);
     height: 30px;
     width: 50px;
-      
+
   }
 
-  button.delete:hover {
-      background-color: var(--kolor-name-hover);
+  span.modDate {
+    display: inline-block;
+    font-size: small;
+    padding: 0.8em 2.7em 0 0.7em;
+    line-height: 1em;
+    position: absolute;
+    right: -150px;
+    color: gray;
+    height: 28px;
+    width: 1.2em;
   }
+

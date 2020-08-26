@@ -9,17 +9,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AnimalService {
-  private animalsUrl = 'api/animals';  // URL to web api
+  public animalsUrl = 'api/animals';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
+  animals: Animal[];
+
   constructor(
     private http: HttpClient
 
   ) { }
 
-  getAnimals(): Observable<Animal[]> { 
+  getAnimals(): Observable<Animal[]> {
     return this.http.get<Animal[]>(this.animalsUrl).pipe(
       catchError(this.handleError<Animal[]>('getAnimals', []))
     );
@@ -29,6 +31,12 @@ export class AnimalService {
     const url = `${this.animalsUrl}/${id}`;
     return this.http.get<Animal>(url).pipe(
       catchError(this.handleError<Animal>(`getAnimal id=${id}`))
+    );
+  }
+
+  updateAnimal(animal: Animal): Observable<any> {
+    return this.http.put(this.animalsUrl, animal, this.httpOptions).pipe(
+      catchError(this.handleError<any>('updateAnimal'))
     );
   }
 
@@ -47,11 +55,12 @@ export class AnimalService {
     );
   }
 
+  // tslint:disable-next-line: typedef
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       return of(result as T);
     };
   }
 
-  
+
 }
