@@ -1,0 +1,28 @@
+div {
+    margin: 20px;
+    margin-left: 50px;
+}
+div label {
+    width: 50px;
+  }
+
+
+  button.add {
+    background-color: rgb(243, 210, 210);
+    border: 1px solid rgb(245, 139, 136);
+    height: 30px;
+    width: 150px;
+  }
+
+  button.delete:hover, button.add:hover {
+      background-color: rgb(191, 226, 145);
+  }
+
+
+  label.date {
+    display: inline;
+
+  }
+  label.date input {
+    width: 70px;
+  }
