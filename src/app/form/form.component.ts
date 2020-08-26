@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimalService } from '../animal.service';
+import { Animal } from '../animal';
+import { MatDatepicker } from '@angular/material';
 
 @Component({
-  selector: 'app-form',
+  // tslint:disable-next-line: component-selector
+  selector: 'datepicker-api',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+// tslint:disable-next-line: component-class-suffix
+export class DatepickerApi implements OnInit {
 
   constructor() { }
 
@@ -13,3 +18,5 @@ export class FormComponent implements OnInit {
   }
 
 }
+
+
