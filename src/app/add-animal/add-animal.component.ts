@@ -8,8 +8,7 @@ import { Animal } from '../animal';
 import { AnimalService } from '../animal.service';
 import { AnimalsList } from '../animalsList';
 import { AnimalsComponent } from '../animals/animals.component';
-import { DatepickerApi } from '../form/form.component';
-import { MatDatepicker } from '@angular/material';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 
 @Component({
